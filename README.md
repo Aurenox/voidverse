@@ -1,81 +1,405 @@
-# VOIDVERSE — Advanced Edition
+# VOIDVERSE — Deep Field Archive
 
-Your original five-chapter scroll experience, rebuilt with a cinematic-grade
-effects layer on top. Same chapters (Portal / Memories / Worlds / Valley /
-Peak), same content — the engine underneath is significantly more advanced.
+> **An interactive cinematic journey beyond the known.**
 
-## Run it
+VOIDVERSE is an immersive 3D web experience built with **React, Three.js, and React Three Fiber**.
+
+The experience takes visitors through five connected chapters:
+
+```text
+01 PORTAL
+      ↓
+02 MEMORIES
+      ↓
+03 WORLDS
+      ↓
+04 VALLEY
+      ↓
+05 PEAK
+```
+
+The visual journey evolves from **discovery → memory → exploration → descent → ascension**, with recurring dimensional energy, fragments, crystals, particles, rings, and atmospheric effects.
+
+## ✦ Experience
+
+### 01 — PORTAL
+
+A gigantic procedural dimensional gateway constructed from layered geometry:
+
+- Structural rings
+- Mechanical components
+- Rotating elements
+- Energy rings
+- Fractured geometry
+- Emissive surfaces
+- Dimensional membrane
+- Central void
+- Floating debris
+- Atmospheric particles
+
+### 02 — MEMORIES
+
+A mysterious archive containing dimensional artifacts:
+
+- Crystals
+- Energy cores
+- Relics
+- Fractured spheres
+- Glass-like fragments
+- Geometric mechanisms
+- Dimensional artifacts
+
+Artifacts respond to hover and selection with highlighting, emissive changes, camera focus, surrounding particles, and information panels.
+
+### 03 — WORLDS
+
+A miniature cosmic system containing unique procedural worlds using layered cores, surfaces, atmospheres, clouds, emissive regions, rings, moons, and orbital debris.
+
+### 04 — VALLEY
+
+A gigantic alien dimensional canyon containing:
+
+- Massive procedural rock formations
+- Glowing crystals
+- Floating islands
+- Dimensional energy streams
+- Particle waterfalls
+- Atmospheric fog
+- Floating debris
+- Distant alien silhouettes
+
+**VOIDVERSE does not use a city environment.**
+
+### 05 — PEAK
+
+The climax: a gigantic alien mountain containing **THE FINAL PORTAL**.
+
+As the climax activates, mountain energy increases, particles rise, debris orbits, energy streams converge, and the final portal activates.
+
+## ✦ Core Features
+
+### Cinematic Navigation
+
+Supported controls:
+
+- Mouse wheel
+- Arrow Up / Arrow Down
+- Page Up / Page Down
+- Touch swipe
+- On-screen navigation
+
+Navigation uses a transition lock so one gesture cannot skip multiple chapters.
+
+### Persistent WebGL Architecture
+
+VOIDVERSE uses **one persistent React Three Fiber Canvas** for the entire experience.
+
+```text
+App
+│
+├── HTML Interface
+│
+└── ONE persistent Canvas
+    │
+    ├── Camera
+    ├── Global atmosphere
+    ├── Particles
+    ├── Transition system
+    │
+    └── Active chapter
+        ├── Portal
+        ├── Memories
+        ├── Worlds
+        ├── Valley
+        └── Peak
+```
+
+The Canvas remains mounted while navigating between chapters.
+
+### 3D Interaction
+
+Interactive objects support hover highlighting, emissive response, scale response, camera focus, selection, contextual information panels, and mobile tap interaction.
+
+### Procedural Graphics
+
+VOIDVERSE is created without external 3D models.
+
+No required `.glb`, `.gltf`, `.fbx`, or `.obj` assets are used. Environments are constructed procedurally with Three.js and React Three Fiber.
+
+### Materials & Atmosphere
+
+The visual system combines metallic, glass-like, crystalline, stone, ceramic, emissive, and transparent materials with fog, particles, layered geometry, and atmospheric effects.
+
+### Lighting
+
+Lighting is intentionally controlled using key, fill, and rim lighting together with emissive materials and ambient/environment contribution.
+
+## ✦ Performance
+
+VOIDVERSE is designed for a normal laptop browser.
+
+Performance techniques include:
+
+- Device-aware pixel ratio
+- Reduced particle counts on mobile
+- Reusable geometry and materials
+- Buffer-based particle systems
+- Instancing where appropriate
+- Limited lighting and shadows
+- Ref-based animation
+- Minimal React state updates during animation
+
+### Responsive Experience
+
+Desktop provides richer environments and cinematic framing. Mobile uses wider camera framing, simplified effects, reduced particle density, reduced rendering complexity, and touch navigation.
+
+### Reduced Motion
+
+VOIDVERSE respects:
+
+```css
+@media (prefers-reduced-motion: reduce)
+```
+
+Camera movement, particle movement, environmental animation, and transition intensity are reduced while preserving the visual experience.
+
+## ✦ Interface
+
+The interface uses:
+
+- Glassmorphism
+- Thin borders
+- Subtle gradients
+- Backdrop blur
+- Restrained glow
+- Cinematic typography
+
+Brand:
+
+```text
+VOIDVERSE
+BEYOND THE KNOWN
+```
+
+Navigation:
+
+```text
+01 PORTAL
+02 MEMORIES
+03 WORLDS
+04 VALLEY
+05 PEAK
+```
+
+## 🛠 Technology Stack
+
+### Frontend
+
+- React
+- React Three Fiber
+- Three.js
+- @react-three/drei
+- CSS
+- Vite
+
+### 3D
+
+- Procedural Three.js geometry
+- BufferGeometry
+- THREE.Points
+- Instanced geometry
+- Emissive materials
+- Transparent materials
+- Procedural environmental construction
+
+### Browser APIs
+
+- Pointer events
+- Wheel events
+- Keyboard events
+- Touch events
+- `requestAnimationFrame`
+
+## 📂 Project Structure
+
+VOIDVERSE intentionally keeps the application architecture compact.
+
+```text
+voidverse/
+│
+├── src/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── public/
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+### `src/App.jsx`
+
+Contains the complete application implementation:
+
+- React application
+- React Three Fiber Canvas
+- All five 3D scenes
+- Procedural geometry
+- Materials
+- Lighting
+- Particles
+- Camera system
+- Transitions
+- Navigation
+- Interaction
+- HUD
+- Loading screen
+- Responsive quality logic
+- Scene data
+- Animation logic
+
+### `src/index.css`
+
+Contains the complete visual and UI system:
+
+- Global styles
+- Layout
+- Typography
+- Glass UI
+- Navigation
+- Buttons
+- Information panels
+- Loading screen
+- Animations
+- Transitions
+- Responsive rules
+- Mobile styling
+- Reduced-motion rules
+
+### `src/main.jsx`
+
+The Vite/React entry point responsible for mounting the application. The React root is created here, while `App.jsx` exports the application component.
+
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd voidverse
+```
+
+### Install dependencies
 
 ```bash
 npm install
+```
+
+### Run development server
+
+```bash
 npm run dev
 ```
 
-Open the printed local URL. `npm run build` produces a static `dist/`
-you can host anywhere (Vercel, Netlify, GitHub Pages, S3...).
+### Build for production
 
-## What's new
-
-**Custom GLSL shaders** (`src/shaders/`) — the portal core, planet
-atmospheres, and the valley's energy river are no longer flat materials.
-They're hand-written vertex/fragment shaders: the portal's surface
-physically ripples with fbm noise, planets get a real fresnel atmosphere
-halo instead of a wireframe shell, and the river has a scrolling turbulent
-core with additive glow.
-
-**Post-processing pipeline** (`src/components/PostFX.jsx`) — a full
-`EffectComposer` stack: mipmap bloom, chromatic aberration, film grain,
-and vignette, all with mipmap blur so it stays sharp at any resolution.
-Bloom and aberration intensify automatically during chapter transitions
-and pulse with the audio level.
-
-**Cinematic camera rig** (`src/hooks/useCinematicCamera.js`) — instead of
-the camera just teleporting into position when you cross a chapter
-boundary, GSAP flies it there on an eased dolly path and hands control
-back to OrbitControls once the shot settles. There's also a subtle
-cursor-parallax layer active once a shot is settled, so the frame breathes
-even when you're not dragging.
-
-**Audio-reactive engine** (`src/hooks/useAudioReactive.js`) — toggle
-"SIGNAL AUDIO" in the top bar and a Web Audio analyser drives bloom
-intensity, portal breathing, dust drift speed, and orbit speed in real
-time. Drop your own ambient track at `public/ambient-hum.mp3` and it'll
-play automatically; until you do, a small synthesized ambient pad
-(detuned oscillators + slow LFO) fills in so the reactive visuals still
-have something real to respond to.
-
-**Drag-to-inspect physics** (`src/hooks/useDragRotate.js`) — select any
-memory fragment or world and you can now grab-and-spin it with your
-cursor; released, it keeps spinning and decays with inertia rather than
-snapping back.
-
-**GPU instancing** (`src/components/InstancedRocks.jsx`) — the valley's
-44 canyon rocks now render in a single draw call via `InstancedMesh`
-instead of 44 separate meshes, which matters once bloom + grain are also
-running every frame.
-
-**Letterbox transitions** — crossing a chapter boundary now briefly
-letterboxes the frame and flashes bloom/aberration, reinforcing the "cut
-to next scene" feeling instead of an instant swap.
-
-## Adding your own soundtrack
-
-Drop an MP3/OGG file into `public/` and point the `<audio src="...">` in
-`src/App.jsx` (near the bottom of the `App` component) at it. No other
-code changes needed — the analyser attaches to whatever is playing.
-
-## Structure
-
+```bash
+npm run build
 ```
-src/
-  App.jsx                    scenes, HUD, loader, app shell
-  index.css                  all HUD chrome styling
-  shaders/                   portal / atmosphere / river GLSL materials
-  hooks/
-    useCinematicCamera.js    GSAP camera dolly + parallax
-    useAudioReactive.js      Web Audio analyser + synth fallback
-    useDragRotate.js         inertia-based drag rotation
-  components/
-    PostFX.jsx               bloom / aberration / grain / vignette
-    InstancedRocks.jsx       instanced canyon geometry
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+## 🎮 Controls
+
+| Action | Input |
+|---|---|
+| Next chapter | Mouse wheel down |
+| Previous chapter | Mouse wheel up |
+| Next chapter | Arrow Down / Page Down |
+| Previous chapter | Arrow Up / Page Up |
+| Navigate chapter | On-screen navigation |
+| Navigate on mobile | Swipe |
+| Select artifact | Click / tap |
+| Select world | Click / tap |
+| Clear selection | Click outside selected object |
+
+## 🌌 Narrative Structure
+
+```text
+PORTAL
+Dimensional fragments
+        ↓
+MEMORIES
+Fragments become artifacts
+        ↓
+WORLDS
+Artifact energy becomes planetary energy
+        ↓
+VALLEY
+Planetary surface becomes alien terrain
+        ↓
+PEAK
+The original dimensional portal returns
+```
+
+The journey forms a visual loop:
+
+```text
+DISCOVERY
+   ↓
+MEMORY
+   ↓
+EXPLORATION
+   ↓
+DESCENT
+   ↓
+ASCENSION
+   ↓
+PORTAL
+```
+
+## 🔮 Future Enhancements
+
+Potential future directions include:
+
+- Original soundtrack integration
+- More sophisticated audio-reactive visuals
+- Additional dimensional artifacts
+- Additional worlds
+- Expanded environmental storytelling
+- Shareable chapter URLs
+- Saveable discoveries
+- VR/WebXR support
+- Advanced procedural terrain
+- More cinematic camera sequences
+
+## 👤 Author
+
+**Saurav B**
+
+## 📜 License
+
+This project is developed for **personal and academic purposes**.
+
+All rights reserved unless otherwise specified.
+
+## ✦ Final Statement
+
+VOIDVERSE is an experiment in using the browser as a cinematic medium.
+
+> **What if a website didn't feel like a website?**
+
+Instead of navigating pages, the visitor travels through a continuous dimensional environment — entering the unknown, recovering memories, discovering worlds, descending into an alien landscape, and finally ascending toward the origin of the journey.
+
+**Welcome to VOIDVERSE.**
+
+```text
+BEYOND THE KNOWN
 ```
