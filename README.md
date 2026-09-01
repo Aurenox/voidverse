@@ -288,7 +288,7 @@ The Vite/React entry point responsible for mounting the application. The React r
 ### Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Aurenox/voidverse.git
 cd voidverse
 ```
 
@@ -303,32 +303,6 @@ npm install
 ```bash
 npm run dev
 ```
-
-### Build for production
-
-```bash
-npm run build
-```
-
-### Preview production build
-
-```bash
-npm run preview
-```
-
-## 🎮 Controls
-
-| Action | Input |
-|---|---|
-| Next chapter | Mouse wheel down |
-| Previous chapter | Mouse wheel up |
-| Next chapter | Arrow Down / Page Down |
-| Previous chapter | Arrow Up / Page Up |
-| Navigate chapter | On-screen navigation |
-| Navigate on mobile | Swipe |
-| Select artifact | Click / tap |
-| Select world | Click / tap |
-| Clear selection | Click outside selected object |
 
 ## 🌌 Narrative Structure
 
